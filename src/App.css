@@ -1,0 +1,95 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@400;700&display=swap');
+
+body {
+  font-family: 'Jetbrains Mono', 'Cinzel', 'Quicksand', monospace;
+  color: #433D4F; 
+}
+
+#root {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  padding: 50px;
+}
+
+.greetings-container {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.greetings-title {
+  font-family: 'Jetbrains Mono', serif;
+  font-weight: bold;
+  color: #5C3A9E; 
+  font-size: 30px;
+  text-align: center;
+  background-color: #ffffff;
+  height: 195px;
+  width:fit-content;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
+  border-radius: 12px;
+}
+
+.greetings-subtitle {
+  font-family: 'Jetbrains Mono', serif;
+  font-weight: normal;
+  color: #5C3A9E; 
+  font-size: 20px;
+  line-height: 30px;
+  text-align: left;
+  background-color: #ffffff;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.profile-card {
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(112, 94, 138, 0.1);
+  padding: 15px;
+  text-align: center;
+  width: 600px;
+  height: auto;
+  border: 1px solid #DCD0FF;
+  background-color: #ffffff; 
+}
+
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: none; 
+  object-fit: cover;
+  margin-bottom: 0px;
+  border: none; 
+}
+
+.profile-card h2 {
+  font-family: 'Jetbrains Mono', serif;
+  color: #5C3A9E; 
+  font-size: 24px;
+  margin: 12px 0 4px;
+}
+
+.profile-card p {
+  color: #5C3A9E; 
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
+}
