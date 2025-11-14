@@ -8,7 +8,7 @@ body {
 
 #root {
   position: relative;
-  height: 100vh;
+  min-height: 100vh; 
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -18,12 +18,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  padding: 50px;
+  min-height: 100vh;
+  padding: 2rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .greetings-container {
-  margin-left: 50px;
+  flex: 1; 
+  min-width: 300px;
+  max-width: 600px;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,19 +42,18 @@ body {
   font-size: 30px;
   text-align: center;
   background-color: #ffffff;
-  height: 195px;
-  width:fit-content;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 40px;
+  height: auto; /* Use auto height */
+  width: 100%;
+  padding: 40px 20px 20px 20px;
   border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .greetings-subtitle {
   font-family: 'Jetbrains Mono', serif;
   font-weight: normal;
   color: #5C3A9E; 
-  font-size: 20px;
+  font-size: 18px;
   line-height: 30px;
   text-align: left;
   background-color: #ffffff;
@@ -57,6 +61,8 @@ body {
   width: auto;
   padding: 20px;
   border-radius: 12px;
+  margin-top: 1rem; 
+  padding-bottom: 0px;
 }
 
 .profile-card {
@@ -64,10 +70,13 @@ body {
   box-shadow: 0 8px 24px rgba(112, 94, 138, 0.1);
   padding: 15px;
   text-align: center;
-  width: 600px;
+  width: 100%;
+  max-width: 500px; 
+  margin: 1rem;
   height: auto;
   border: 1px solid #DCD0FF;
   background-color: #ffffff; 
+  box-sizing: border-box;
 }
 
 
@@ -77,7 +86,8 @@ body {
   border-radius: none; 
   object-fit: cover;
   margin-bottom: 0px;
-  border: none; 
+  border: none
+  
 }
 
 .profile-card h2 {
@@ -92,4 +102,127 @@ body {
   font-weight: 500;
   font-size: 16px;
   margin: 0;
+}
+
+/* ========================================
+  NEW STYLES FOR YOUR PROFILE CARD
+  (Placed *outside* the media query so they work on DESKTOP)
+  ========================================
+*/
+
+/* Social Links */
+.social-links {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 12px;
+  background-color: #f0ebf9; 
+  color: #5C3A9E;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.social-links a:hover {
+  background-color: #5C3A9E;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.hobby-section,
+.games-section,
+.tech-stack {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #DCD0FF; /* Your theme border color */
+}
+
+.hobby-section h4,
+.games-section h4,
+.tech-stack h3 {
+  font-family: 'Jetbrains Mono', serif;
+  color: #5C3A9E;
+  font-size: 18px;
+  margin: 0 0 0.75rem 0;
+}
+
+.hobby-section p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #433D4F;
+  text-align: left;
+  padding: 0px 0px 20px 20px;
+  padding-bottom: 0px;
+}
+
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tech-badge {
+  background-color: #f0ebf9; /* Pastel purple */
+  color: #5C3A9E;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.game-badge {
+  background-color: #ffffff;
+  border: 1px solid #DCD0FF;
+  color: #433D4F;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* ========================================
+  RESPONSIVE MAGIC
+  (This block is now *only* for mobile overrides)
+  ========================================
+*/
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .profile-card {
+    max-width: 90vw;
+    margin: 1rem 0;
+  }
+
+  .greetings-container {
+    max-width: 90vw;
+    margin: 1rem 0;
+  }
+
+  .greetings-title {
+    font-size: 24px;
+    padding: 20px;
+  }
+
+  .greetings-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
